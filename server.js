@@ -23,11 +23,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render("maintnance.hbs", {
-    pageTitle: 'Maintnance Page'
-  });
-});
+// app.use((req, res, next) => {
+//   res.render("maintnance.hbs", {
+//     pageTitle: 'Maintnance Page'
+//   });
+// });
 
 app.use(express.static(__dirname + "/public")); // use is executed in order. If this use would be first the other app.use would not be called
 
@@ -50,6 +50,12 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about.hbs", {
     pageTitle: 'About Page'
+  });
+});
+
+app.get("/projects", (req, res) => {
+  res.render("projects.hbs", {
+    pageTitle: 'Project Page'
   });
 });
 
